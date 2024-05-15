@@ -1,15 +1,22 @@
-name: Open new issue
-on: workflow_dispatch
+name: Greeting on variable day
+
+on:
+  workflow_dispatch
+
+env:
+  DAY_OF_WEEK: Monday
 
 jobs:
-  open-issue:
+  greeting_job:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
+    env:
+      Greeting: Hello
     steps:
-      - run: |
-          gh issue --repo ${{ github.repository }} \
-            create --title "Issue title" --body "Issue body"
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          First_Name: Mona
+      - name: "print"
+        run: env
+        env:
+          First_Name: martin
