@@ -8,7 +8,7 @@ jobs:
         if: runner.os == 'Windows'
         run: echo "The operating system on the runner is $env:RUNNER_OS."
       - name: always
-        run: echo $RUNNER_NAME
+        run: echo ${{ runner.os }}
       - name: condition 2
         if: runner.os != 'Windows'
         run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
