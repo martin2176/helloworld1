@@ -5,6 +5,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  env_var: ${{ vars.FOO }}
 
 jobs:
   greeting_job:
@@ -22,5 +23,7 @@ jobs:
           First_Name: martin
       - name: "print foo"
         run: echo '${{ vars.FOO }}' 
+      - name: "print foo2"
+        run: echo $env_var 
       - name: "print foo1"
         run: echo '${{ vars.FOO1 }}' 
