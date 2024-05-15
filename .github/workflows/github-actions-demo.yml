@@ -1,5 +1,6 @@
 on: workflow_dispatch
-
+env:
+ env_var: ${{ runner.os }}
 jobs:
   if-Windows-else:
     runs-on: ubuntu-latest
@@ -8,7 +9,7 @@ jobs:
         if: runner.os == 'Windows'
         run: echo "The operating system on the runner is $env:RUNNER_OS."
       - name: always
-        run: echo ${{ runner.os }}
+        run: echo "variable from shell environment $env_var"
       - name: condition 2
         if: runner.os != 'Windows'
         run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
