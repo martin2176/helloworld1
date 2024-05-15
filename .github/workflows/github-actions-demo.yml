@@ -21,4 +21,4 @@ jobs:
         env:
           First_Name: martin
       - name: "print foo"
-        run: echo '${{ env.foo }} ${{ env.FOO }}' 
+        run: echo '${{ vars.foo }} ${{ vars.FOO }}' 
