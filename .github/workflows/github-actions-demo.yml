@@ -1,10 +1,10 @@
 on: workflow_dispatch
 env:
- environment: 'test'
  env_var: ${{ vars.FOO }}
 jobs:
   if-Windows-else:
     runs-on: ubuntu-latest
+    environment: test
     steps:
       - name: condition 1
         if: runner.os == 'Windows'
