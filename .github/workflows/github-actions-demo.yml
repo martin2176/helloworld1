@@ -1,6 +1,7 @@
 on: workflow_dispatch
 env:
- env_var: ${{ runner.os }}
+environment: test
+ env_var: ${{ vars.FOO }}
 jobs:
   if-Windows-else:
     runs-on: ubuntu-latest
