@@ -1,6 +1,6 @@
 on: workflow_dispatch
 env:
-environment: test
+ environment: test
  env_var: ${{ vars.FOO }}
 jobs:
   if-Windows-else:
