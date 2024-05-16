@@ -4,5 +4,5 @@ jobs:
   print_context:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo ${{ toJSON(github.event) }}
+     - name: printoutput
+       run: echo ${{ toJSON(github.event) }}
