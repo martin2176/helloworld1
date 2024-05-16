@@ -14,3 +14,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Output node version
         run: node --version
+      - name: print os info1
+        run: echo $RUNNER_OS
+      - name: print os info2
+        run: echo ${{ runner.os }}
