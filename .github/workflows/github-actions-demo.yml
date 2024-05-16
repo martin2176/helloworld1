@@ -1,17 +1,16 @@
-on: workflow_dispatch
-env:
- env_var: ${{ vars.FOO }}
+name: Test matrix
+on: push
+
 jobs:
-  if-Windows-else:
-    runs-on: ubuntu-latest
-    environment: test1
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [14, 16]
     steps:
-      - name: condition 1
-        if: runner.os == 'Windows'
-        run: echo "The operating system on the runner is $env:RUNNER_OS."
-      - name: always
-        run: echo "variable from shell environment $env_var"
-      - name: condition 2
-        if: runner.os != 'Windows'
-        run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
-        
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Output node version
+        run: node --version
