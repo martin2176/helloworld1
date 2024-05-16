@@ -1,20 +1,20 @@
-name: Test matrix
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        required: true
+        type: string
+      deploy_target:
+        required: true
+        type: string
+      perform_deploy:
+        required: true
+        type: boolean
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        node: [14, 16]
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.perform_deploy }}
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Output node version
-        run: node --version
-      - name: print os info1
-        run: echo ' $RUNNER_OS  $env:RUNNER_OS'
-      - name: print os info2
-        run: echo ${{ runner.os }}
+      - name: Deploy build to target
+        run: echo "Deploying build:${{ inputs.build_id }} to target:${{ inputs.deploy_target }}"
