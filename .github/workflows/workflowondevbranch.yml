@@ -1,0 +1,8 @@
+on:
+  workflow_dispatch:
+jobs:
+  print_contextondevbranch:
+    runs-on: ubuntu-latest
+    steps:
+     - name: printoutput
+       run: echo "${{ toJSON(github.event) }}"
