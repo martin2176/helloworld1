@@ -1,5 +1,5 @@
 on:
-  push:
+  workflow_dispatch:
 jobs:
   print_context:
     runs-on: ubuntu-latest
