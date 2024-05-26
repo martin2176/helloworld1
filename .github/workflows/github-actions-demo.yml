@@ -6,9 +6,9 @@ jobs:
    steps:
    - id: env-setup
      run: | 
-      echo
+      echo "
       {
       "env_token=production"
       "env_domain=example.com"
-      } >> "$GITHUB_OUTPUT"
+      }" >> "$GITHUB_OUTPUT"
 
