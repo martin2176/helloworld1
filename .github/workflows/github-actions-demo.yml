@@ -17,3 +17,6 @@ jobs:
      run: |
       echo "${{ steps.env-setup1.outputs.env_token }}"
       echo "${{ steps.env-setup2.outputs.env_token }}"
+   outputs:
+    output1: ${{ steps.env-setup1.outputs.env_token }}
+    output2: ${{ steps.env-setup2.outputs.env_token }}
