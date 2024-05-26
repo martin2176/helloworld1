@@ -23,7 +23,9 @@ jobs:
       echo "${{ steps.env-setup2.outputs.env_token }}"
    - id: cat-file
      name: cat-env
-     run: echo $GITHUB_OUTPUT
+     run: |
+      echo $GITHUB_OUTPUT
+      cat $GITHUB_OUTPUT
    outputs:
     output1: ${{ steps.env-setup1.outputs.env_token }}
     output2: ${{ steps.env-setup2.outputs.env_token }}
