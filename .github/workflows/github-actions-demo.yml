@@ -8,10 +8,14 @@ jobs:
      name: env-setip1
      run: | 
       echo "env_token=production" >> $GITHUB_OUTPUT
+      echo $GITHUB_OUTPUT
+      cat $GITHUB_OUTPUT
    - id: env-setup2
      name: env-setip2
      run: | 
       echo "env_token=development"  >> $GITHUB_OUTPUT
+      echo $GITHUB_OUTPUT
+      cat $GITHUB_OUTPUT
    - id: print-env
      name: print-env
      run: |
@@ -19,7 +23,7 @@ jobs:
       echo "${{ steps.env-setup2.outputs.env_token }}"
    - id: cat-file
      name: cat-env
-     run: cat $GITHUB_OUTPUT
+     run: echo $GITHUB_OUTPUT
    outputs:
     output1: ${{ steps.env-setup1.outputs.env_token }}
     output2: ${{ steps.env-setup2.outputs.env_token }}
