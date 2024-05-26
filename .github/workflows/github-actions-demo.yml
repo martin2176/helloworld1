@@ -31,5 +31,5 @@ jobs:
     - id: printjob1
       name: printjob1
       run: |
-       echo ${needs.job1.outputs.output1}
-       echo ${needs.job1.outputs.output2}
+       echo ${{needs.job1.outputs.output1}}
+       echo ${{needs.job1.outputs.output2}}
