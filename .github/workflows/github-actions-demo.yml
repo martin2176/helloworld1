@@ -7,10 +7,10 @@ jobs:
    - id: env-setup
      name: env-setip
      run: | 
-      {
+      echo "
       "env_token=production"
       "env_domain=example.com"
-      } >> $GITHUB_OUTPUT
+      " >> $GITHUB_OUTPUT
    - id: print-env
      name: print-env
      run: |
