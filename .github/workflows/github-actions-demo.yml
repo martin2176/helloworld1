@@ -5,7 +5,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
    - id: env-setup
-     run: | 
+     run:| 
       echo "
        "env_token=production"
        "env_domain=example.com"
