@@ -13,7 +13,7 @@ jobs:
      name: env-setip2
      run: | 
       echo "
-      "env_token=production"  >> $GITHUB_OUTPUT
+      "env_token=development"  >> $GITHUB_OUTPUT
    - id: print-env
      name: print-env
      run: |
