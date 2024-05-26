@@ -21,11 +21,15 @@ jobs:
      run: |
       echo "${{ steps.env-setup1.outputs.env_token }}"
       echo "${{ steps.env-setup2.outputs.env_token }}"
-   - id: cat-file
-     name: cat-env
-     run: |
-      echo $GITHUB_OUTPUT
-      cat $GITHUB_OUTPUT
    outputs:
     output1: ${{ steps.env-setup1.outputs.env_token }}
     output2: ${{ steps.env-setup2.outputs.env_token }}
+  job2:
+   runs-on: ubuntu-latest
+   needs: job1
+   steps:
+    - id: printjob1
+      name: printjob1
+      run: |
+       echo ${needs.job1.outputs.output1}
+       echo ${needs.job1.outputs.output2}
