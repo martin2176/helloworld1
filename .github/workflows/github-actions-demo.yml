@@ -9,7 +9,7 @@ jobs:
       echo "
       "env_token=production"
       "env_domain=example.com"
-      " >> "$GITHUB_OUTPUT"
+      " >> $GITHUB_OUTPUT
    - id: print-env
      run: |
       echo "${{ steps.env-setup.outputs.env_token }}"
