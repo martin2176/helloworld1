@@ -4,15 +4,18 @@ jobs:
   job1:
    runs-on: ubuntu-latest
    steps:
-   - id: env-setup
-     name: env-setip
+   - id: env-setup1
+     name: env-setip1
      run: | 
       echo "
-      "env_token=production"
-      "env_domain=example.com"
-      " >> $GITHUB_OUTPUT
+      "env_token=production" >> $GITHUB_OUTPUT
+   - id: env-setup2
+     name: env-setip2
+     run: | 
+      echo "
+      "env_token=production"  >> $GITHUB_OUTPUT
    - id: print-env
      name: print-env
      run: |
-      echo "${{ steps.env-setup.outputs.env_token }}"
-      echo "${{ steps.env-setup.outputs.env_domain }}"
+      echo "${{ steps.env-setup1.outputs.env_token }}"
+      echo "${{ steps.env-setup2.outputs.env_token }}"
