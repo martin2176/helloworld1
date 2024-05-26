@@ -2,10 +2,12 @@ on:
   workflow_dispatch:
 jobs:
   job1:
+   runs-on: ubuntu-latest
    steps:
    - id: env-setup
-     run: | echo
-     {
-      "env_token=production"
-      "env_domain=example.com"
-     } >> $GITHUB_OUTPUT
+     run: | 
+      echo
+      {
+       "env_token=production"
+       "env_domain=example.com"
+      } >> $GITHUB_OUTPUT
