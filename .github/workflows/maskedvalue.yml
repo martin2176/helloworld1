@@ -1,14 +1,12 @@
 on: workflow_dispatch
 jobs:
-  generate-a-secret-output:
+  bash-example:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
-      - id: sets-a-secret
-        name: Generate, mask, and output a secret
-        run: |
-          the_secret=$((RANDOM))
-          echo "::add-mask::$the_secret"
-          echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
-      - name: Use that secret output (protected by a mask)
-        run: |
-          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
+      - name: printoutput
+        run: echo $MY_NAME
+
