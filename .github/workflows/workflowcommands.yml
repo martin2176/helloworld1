@@ -12,6 +12,14 @@ jobs:
             echo "::add-mask::Mona The Octocat"
             echo "::endgroup::"
             echo "::add-mask::"Mona The Octocat""
+  bash-example1:
+    runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
+    steps:
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
+
 
 
    
