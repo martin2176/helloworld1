@@ -11,7 +11,7 @@ jobs:
             echo "again inside group"
             echo "::add-mask::Mona The Octocat"
             echo "::endgroup::"
-            echo "::add-mask::Mona The Octocat"
+            echo "::add-mask::"Mona The Octocat""
 
 
    
