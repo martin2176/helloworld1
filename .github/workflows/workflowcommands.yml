@@ -9,6 +9,7 @@ jobs:
             echo "::group::My title"
             echo "Inside group"
             echo "again inside group"
+            echo "::add-mask::Mona The Octocat"
             echo "::endgroup::"
 
    
