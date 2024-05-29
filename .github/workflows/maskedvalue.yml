@@ -11,3 +11,6 @@ jobs:
           curl https://example.com
           echo EOF
         } >> "$GITHUB_ENV"
+        echo $envfile >> "$GITHUB_ENV"
+       env:
+        envfile: ${{ GITHUB_ENV }}
