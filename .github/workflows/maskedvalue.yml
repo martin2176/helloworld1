@@ -13,5 +13,5 @@ jobs:
         echo  ${{ github.env }}
         echo ${{ runner.os }}
        env:
-        envfile: ${{ github.env }}
-        envfile1: hello
+        envfile: ${{github.env}}
+        envfile1: ${{ runner.os }}
