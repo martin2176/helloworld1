@@ -12,6 +12,8 @@ jobs:
         echo $envfile1
         echo  ${{ github.env }}
         echo ${{ runner.os }}
+        cat $GITHUB_ENV
+        cat ${{ github.env }}
        env:
         envfile: ${{github.env}}
         envfile1: ${{ runner.os }}
