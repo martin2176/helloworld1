@@ -9,5 +9,7 @@ jobs:
         echo "action_state=yellow" >> "$GITHUB_ENV"
         echo $GITHUB_ENV
         echo $envfile
+        echo  ${{ github.env }}
+        echo ${{ runner.os }}
        env:
-        envfile: ${{ github.env	 }}
+        envfile: ${{ github.env }}
