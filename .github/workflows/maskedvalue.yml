@@ -10,4 +10,4 @@ jobs:
         echo $GITHUB_ENV
         echo $envfile
        env:
-        envfile: $GITHUB_ENV
+        envfile: ${{ github.env	 }}
