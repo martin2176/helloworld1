@@ -12,4 +12,4 @@ jobs:
           echo EOF
         } >> "$GITHUB_ENV"
        env:
-        envfile: hello
+        envfile: $RUNNER_OS
