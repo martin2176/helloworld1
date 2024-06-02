@@ -6,8 +6,9 @@ jobs:
      - name: Set the value in bash
        id: step_one
        run: |
-          {
-            echo 'JSON_RESPONSE<<EOF'
-            curl https://example.com
-            echo EOF
-          } >> "$GITHUB_ENV"
+        echo $PATH
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+     - name: getvalue
+       id: step_two
+       run: |
+        echo $PATH
