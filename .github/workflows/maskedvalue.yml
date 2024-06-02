@@ -14,6 +14,7 @@ jobs:
         echo ${{ runner.os }}
         cat $GITHUB_ENV
         cat ${{ github.env }}
+        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
        env:
         envfile: ${{github.env}}
         envfile1: ${{ runner.os }}
