@@ -6,20 +6,8 @@ jobs:
      - name: Set the value in bash
        id: step_one
        run: |
-        echo "action_state=yellow" >> "$GITHUB_ENV"
-        echo $GITHUB_ENV
-        echo $envfile
-        echo $envfile1
-        echo  ${{ github.env }}
-        echo ${{ runner.os }}
-        cat $GITHUB_ENV
-        cat ${{ github.env }}
-        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
-        echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
-        echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
-        echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
-        echo "- -  How about a third one?" >> $GITHUB_STEP_SUMMARY
-       env:
-        envfile: ${{github.env}}
-        envfile1: ${{ runner.os }}
+          {
+            echo 'JSON_RESPONSE<<EOF'
+            curl https://example.com
+            echo EOF
+          } >> "$GITHUB_ENV"
