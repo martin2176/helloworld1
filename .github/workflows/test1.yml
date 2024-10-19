@@ -11,7 +11,7 @@ jobs:
           echo $EVENT_CONTEXT
     
   print_context2:
-    if: ${{ 1 == 1 }}
+    if: ${{ 1 == 2 }}
     runs-on: ubuntu-latest
     steps:
       - env:
