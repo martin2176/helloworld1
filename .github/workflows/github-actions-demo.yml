@@ -3,33 +3,13 @@ on:
 jobs:
   job1:
    runs-on: ubuntu-latest
-   steps:
-   - id: env-setup1
-     name: env-setip1
-     run: | 
-      echo "env_token=production" >> $GITHUB_OUTPUT
-      echo $GITHUB_OUTPUT
-      cat $GITHUB_OUTPUT
-   - id: env-setup2
-     name: env-setip2
-     run: | 
-      echo "env_token=development"  >> $GITHUB_OUTPUT
-      echo $GITHUB_OUTPUT
-      cat $GITHUB_OUTPUT
-   - id: print-env
-     name: print-env
-     run: |
-      echo "${{ steps.env-setup1.outputs.env_token }}"
-      echo "${{ steps.env-setup2.outputs.env_token }}"
-   outputs:
-    output1: ${{ steps.env-setup1.outputs.env_token }}
-    output2: ${{ steps.env-setup2.outputs.env_token }}
-  job2:
-   runs-on: ubuntu-latest
-   needs: job1
-   steps:
-    - id: printjob1
-      name: printjob1
-      run: |
-       echo ${{needs.job1.outputs.output1}}
-       echo ${{needs.job1.outputs.output2}}
+steps:
+  - name: Set the value
+    id: step_one
+    run: |
+      echo "action_state=yellow" >> "$GITHUB_ENV"
+  - name: Use the value
+    id: step_two
+    run: |
+      printf '%s\n' "$action_state" # This will output 'yellow'
+   
