@@ -14,4 +14,4 @@ jobs:
       - name: task2
         run: echo "${SELECTED_COLOR}"
       - name: task3
-        run: echo "${{ steps.color-selector.outputs.SELECTED_COLOR }}"
+        run: echo "${{steps.color-selector.outputs.SELECTED_COLOR}}"
