@@ -4,14 +4,6 @@ jobs:
   job1:
    runs-on: ubuntu-latest
    steps:
-      - name: Set color
-        id: color-selector
-        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
-      - name: task1
-        env:
-          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
-        run: echo "The selected color is $SELECTED_COLOR"
-      - name: task2
-        run: echo "${SELECTED_COLOR}"
-      - name: task3
-        run: echo "${{steps.color-selector.outputs.SELECTED_COLOR}}"
+      - name: Create annotation for build error
+        run: echo "::error file=app.js,line=1::Missing semicolon"
+
