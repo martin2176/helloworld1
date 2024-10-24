@@ -4,6 +4,6 @@ jobs:
   job1:
    runs-on: ubuntu-latest
    steps:
-      - name: Create annotation for build error
-        run: echo "::error file=app.js,line=1::Missing semicolon"
+      - name: FOOBAR
+        run: echo "::debug::Set the Octocat variable"
 
