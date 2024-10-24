@@ -4,16 +4,14 @@ jobs:
   job1:
    runs-on: ubuntu-latest
    steps:
-    - name: Set the value
-      id: step_one
-      run: |
-       {
-        echo 'JSON_RESPONSE<<EOF'
-        curl https://example.com
-        echo EOF
-        } >> "$GITHUB_ENV"
-    - name: Use the value
-      id: step_two
-      run: |
-       printf '%s\n' "$JSON_RESPONSE"
-   
+      - name: Set color
+        id: color-selector
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: task1
+        env:
+          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+        run: echo "The selected color is $SELECTED_COLOR"
+      - name: task2
+        run: echo "${SELECTED_COLOR}"
+      - name: task3
+        run: echo "${{ steps.color-selector.outputs.SELECTED_COLOR }}"
