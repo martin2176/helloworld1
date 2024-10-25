@@ -3,19 +3,16 @@ on:
 jobs:
   job1:
    runs-on: ubuntu-latest
-   defaults:
-     run:
-       working-directory: ./scripts   
    steps:
       - name: Run the scripts
-        run: echo hello   
+        run: pwd   
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
       - name: Make the script files executable
-        run: chmod +x my-script.sh
+        run: chmod +x ./scripts/my-script.sh
       - name: Run the scripts
         run: |
-          ./my-script.sh
+          ./scripts/my-script.sh
       - name: Run the scripts
         run: pwd 
 
