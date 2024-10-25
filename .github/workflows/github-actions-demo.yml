@@ -3,8 +3,19 @@ on:
 jobs:
   job1:
    runs-on: ubuntu-latest
+   defaults:
+     run:
+       working-directory: ./scripts   
+   
    steps:
-      - name: FOOBAR
-        run: echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+      - name: Make the script files executable
+        run: chmod +x my-script.sh
+      - name: Run the scripts
+        run: |
+          ./my-script.sh
+      - name: Run the scripts
+        run: pwd 
 
 
