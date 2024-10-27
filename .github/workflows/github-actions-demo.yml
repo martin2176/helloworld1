@@ -5,12 +5,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - id: output1
-        name: output1
-        run: echo hello
       - id: output2
         name: output2
-        run: echo "${{ fromJSON(env) }}"
+        run: echo "${{ toJSON(env) }}"
+        timeout-minutes: ${{ fromJSON(env.time) }}
         env: 
          "First_Name": "Mona"
          "Last_Name": "Lisa"
