@@ -10,5 +10,5 @@ jobs:
         run: exit 1
       - id: onfailurestep
         name: onfailurestep
-        if: ${{ steps.failurestep.conclusion == 'failure' }}
+        if: ${{ failure() && steps.failurestep.conclusion == 'failure' }}
         run: echo previous step failed
