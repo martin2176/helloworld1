@@ -1,5 +1,7 @@
+name: "My workflow"
 on:
   workflow_dispatch:
+permissions: read-all  
 jobs:
   job1:
    runs-on: ubuntu-latest
