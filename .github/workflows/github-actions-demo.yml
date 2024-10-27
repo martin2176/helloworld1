@@ -7,7 +7,7 @@ jobs:
     steps:
       - id: failurestep
         name: failurestep
-        run: exit 0
+        run: exit 1
       - id: onfailurestep
         name: onfailurestep
         if: ${{ steps.failurestep.conclusion == 'failure' }}
