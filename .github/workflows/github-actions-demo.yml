@@ -1,14 +1,11 @@
 name: "My workflow"
 on:
   workflow_dispatch:
-
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
-        id: output1
-        run: echo hello && echo ${{ fromJSON(env.continue) }}
+      - id: output1
+        run: echo hello
       -  id: output2
          run: echo "${{ toJSON(env) }}"
-    
