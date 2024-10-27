@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - continue-on-error: true
-      - id: output1
+        id: output1
         run: echo hello
