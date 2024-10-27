@@ -7,5 +7,5 @@ jobs:
     steps:
       - id: output1
         run: echo hello
-      -  id: output2
-         run: echo "${{ toJSON(env) }}"
+      - id: output2
+        run: echo "${{ toJSON(env) }}"
