@@ -11,7 +11,7 @@ jobs:
       - id: set-matrix
         run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT && cat $GITHUB_OUTPUT && echo $GITHUB_OUTPUT
       - id: output1
-        run: cat $GITHUB_OUTPUT && echo $GITHUB_OUTPUT && cat $GITHUB_OUTPUT
+        run: cat $GITHUB_OUTPUT && echo hello
       - id: output2
         run: echo "${{ steps.set-matrix.outputs.matrix }}"
 
