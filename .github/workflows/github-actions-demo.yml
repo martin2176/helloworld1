@@ -10,6 +10,6 @@ jobs:
         run: echo hello
       - id: output2
         name: output2
-        run: echo "${{ toJSON(env) }}"
+        run: echo "${{ toJSON(env.First_Name) }}"
         env: 
          First_Name: Mona
