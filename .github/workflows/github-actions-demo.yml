@@ -7,15 +7,9 @@ jobs:
    runs-on: ubuntu-latest
    steps:
       - name: Run the scripts
-        run: pwd   
-      - name: Check out the repository to the runner
-        uses: actions/checkout@v4  
-      - name: Make the script files executable
-        run: chmod +x ./scripts/my-script.sh
-      - name: Run the scripts
-        run: |
-          ./scripts/my-script.sh
-      - name: Run the scripts
         run: pwd 
+        env:
+         MY_ENV_VAR: ${{ github.ref == 'refs/heads/main' && 'value_for_main_branch' || 'value_for_other_branches' }}
+        
 
 
