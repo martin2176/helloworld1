@@ -12,4 +12,4 @@ jobs:
         name: output2
         run: echo "${{ toJSON(env) }}"
         env: 
-         First_Name: Mona
+         "First_Name": "Mona"
