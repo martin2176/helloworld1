@@ -9,3 +9,6 @@ jobs:
       - continue-on-error: ${{ fromJSON(env.continue) }}
         id: output1
         run: echo hello && echo ${{ fromJSON(env.continue) }}
+      -  id: output2
+         run: echo "${{ toJSON(env) }}"
+    
