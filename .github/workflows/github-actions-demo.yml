@@ -8,4 +8,4 @@ jobs:
     steps:
       - continue-on-error: ${{ fromJSON(env.continue) }}
         id: output1
-        run: echo hello
+        run: echo hello && echo ${{ fromJSON(env.continue) }}
