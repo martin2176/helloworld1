@@ -9,7 +9,8 @@ jobs:
       - name: Run the scripts
         run: pwd 
         env:
-         MY_ENV_VAR: ${{ github.ref == 'refs/heads/main' && true || 'value_for_other_branches' }}
+         MY_ENV_VAR: format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')
+
         
 
 
