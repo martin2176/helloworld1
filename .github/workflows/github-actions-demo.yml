@@ -6,6 +6,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
+      - continue-on-error: true
       - id: output1
         run: echo hello
