@@ -2,21 +2,11 @@ name: "My workflow"
 on: workflow_dispatch
 
 env:
-  mascot: Mona
-  super_duper_var: totally_awesome
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 jobs:
-  windows_job:
-    runs-on: windows-latest
-    steps:
-      - run: echo 'Hi ${{ env.mascot }}'  # Hi Mona
-      - run: echo 'Hi ${{ env.mascot }}'  # Hi Octocat
-        env:
-          mascot: Octocat
   linux_job:
     runs-on: ubuntu-latest
-    env:
-      mascot: Tux
     steps:
-      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
-      - run: echo 'Hi ${{ env.super_duper_var }}'  # Hi Tux
+      - run: echo '${{ env.GH_TOKEN }}' 
