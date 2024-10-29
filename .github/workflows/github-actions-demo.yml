@@ -1,14 +1,31 @@
 name: "My workflow"
-on:
-  workflow_dispatch:
+on: push
+
 jobs:
-  job1:
+  dump_contexts_to_log:
     runs-on: ubuntu-latest
     steps:
-      - id: failurestep
-        name: failurestep
-        run: exit 1
-      - id: onfailurestep
-        name: onfailurestep
-        if: ${{ failure() && steps.failurestep.conclusion == 'failure' }}
-        run: echo previous step failed
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+        run: echo "$STRATEGY_CONTEXT"
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
