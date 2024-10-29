@@ -1,12 +1,21 @@
 name: "My workflow"
-on: workflow_dispatch
-
-env:
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        required: true
+        type: string
+      deploy_target:
+        required: true
+        type: string
+      perform_deploy:
+        required: true
+        type: boolean
 
 jobs:
-  linux_job:
+  deploy:
     runs-on: ubuntu-latest
+    if: ${{ inputs.perform_deploy }}
     steps:
-      - run: echo '${{ env.GH_TOKEN }}' 
+      - name: Deploy build to target
+        run: echo "Deploying build:${{ inputs.build_id }} to target:${{ inputs.deploy_target }}"
