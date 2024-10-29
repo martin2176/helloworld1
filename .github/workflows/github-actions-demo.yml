@@ -19,3 +19,4 @@ jobs:
       mascot: Tux
     steps:
       - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
+      - run: echo 'Hi ${{ env.super_duper_var }}'  # Hi Tux
