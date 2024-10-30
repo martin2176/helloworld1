@@ -8,4 +8,6 @@ jobs:
       MY_NAME: "Mona The Octocat"
     steps:
       - name: bash-version
-        run: echo "::add-mask::$MY_NAME"
+        run: |
+         echo "::add-mask::$MY_NAME"
+         echo $MY_NAME
