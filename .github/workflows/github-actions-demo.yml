@@ -2,22 +2,10 @@ name: "My workflow"
 on:
   workflow_dispatch:
 jobs:
-  job1:
+  bash-example:
     runs-on: ubuntu-latest
-    outputs:
-      output_1: ${{ steps.gen_output.outputs.output_1 }}
-      output_2: ${{ steps.gen_output.outputs.output_2 }}
-      output_3: ${{ steps.gen_output.outputs.output_3 }}    
-
-    strategy:
-      matrix:
-        version: [1, 2, 4]
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
-      - name: Generate_output ${{ strategy.job-index }}
-        id: gen_output
-        run: |
-          version="${{ matrix.version }}"
-          echo "output=${version}" >> "$GITHUB_OUTPUT" 
-          echo "$GITHUB_OUTPUT"
-          hostname
-          echo ${{ strategy.job-index }}
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
