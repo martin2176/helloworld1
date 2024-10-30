@@ -28,4 +28,4 @@ jobs:
       #   "output_2": "2",
       #   "output_3": "3"
       # }
-      - run: echo '${{ toJSON(needs.job1.outputs) }}'
+      - run: echo '${{ (needs.job1.outputs) }}'
