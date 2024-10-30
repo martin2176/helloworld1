@@ -20,12 +20,3 @@ jobs:
           echo "$GITHUB_OUTPUT"
           hostname
           echo ${{ strategy.job-index }}
-  job2:
-    runs-on: ubuntu-latest
-    needs: [job1]
-    steps:
-       - run: |
-          echo '${{ toJSON(needs.job1.outputs) }}'
-          echo '${{ needs.job1.output_1) }}'
-          echo '${{ needs.job1.output_2) }}'
-          echo '${{ needs.job1.output_3) }}'
