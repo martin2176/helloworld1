@@ -8,7 +8,7 @@ jobs:
       - id: lastcommit
         uses: nmbgeek/github-action-get-latest-commit@main
         with:
-          owner: martin
+          owner: martin2176
           repo: helloworld1
           branch: main  
       - id: printcommit
