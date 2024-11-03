@@ -10,6 +10,6 @@ jobs:
         with:
           owner: martin2176
           repo: helloworld1
-          branch: main  
+          branch: dev  
       - id: printcommit
         run: echo ${{ steps.lastcommit.outputs.shorthash }}
