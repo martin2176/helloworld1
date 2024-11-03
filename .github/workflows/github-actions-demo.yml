@@ -2,15 +2,11 @@ name: "My workflow"
 on:
   workflow_dispatch:
 jobs:
-  getcommit:
+  job1:
     runs-on: ubuntu-latest
-    environment: test
+    concurrency:
+      group: group1
+      cancel-in-progress: false
     steps:
-      - id: lastcommit
-        uses: nmbgeek/github-action-get-latest-commit@main
-        with:
-          owner: martin2176
-          repo: helloworld1
-          branch: dev  
-      - id: printcommit
-        run: echo ${{ steps.lastcommit.outputs.shorthash }}
+      - id: step1
+        run: sleep 120
