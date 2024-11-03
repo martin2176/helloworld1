@@ -4,6 +4,7 @@ on:
 jobs:
   getcommit:
     runs-on: ubuntu-latest
+    environment: test
     steps:
       - id: lastcommit
         uses: nmbgeek/github-action-get-latest-commit@main
