@@ -9,6 +9,7 @@ jobs:
         uses: actions/checkout@v4
       - name: pwd
         run: pwd
+        working-directory: ./temp
       - name: npm install, build, and test
         run: |
           npm install
