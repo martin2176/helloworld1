@@ -7,10 +7,12 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
+
     steps:
-      - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is {{ env.DAY_OF_WEEK }}"
+      - name: step1
+        run: |
+         echo ${{ vars.FOO1 }}
+         echo $foo1
         env:
-          First_Name: Mona
+         foo1: ${{ vars.FOO1 }}
+        
