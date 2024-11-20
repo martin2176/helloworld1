@@ -1,0 +1,20 @@
+name: "My workflow"
+on:
+  workflow_dispatch:
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    environment: test
+
+    steps:
+      - name: step1
+        run: |
+         echo ${{ vars.FOO1 }}
+         echo $foo1
+         echo ${{ vars.FOO }} 
+        env:
+         foo1: ${{ vars.FOO1 }}
+        
