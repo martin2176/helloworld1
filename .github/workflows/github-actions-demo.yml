@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: curlstep
-       run: pwd
+       run: curl http://localhost:6379
     # Service containers to run with `runner-job`
     services:
       # Label used to access the service container
