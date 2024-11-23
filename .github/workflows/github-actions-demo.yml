@@ -2,23 +2,16 @@ name: "My workflow"
 on:
   workflow_dispatch:
 jobs:
-  container-test-job:
+  runner-job:
+    # You must use a Linux environment when using service containers or container jobs
     runs-on: ubuntu-latest
-    container:
-      image: node:18
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
-    steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+    # Service containers to run with `runner-job`
     services:
-    # Label used to access the service container
-     redis:
-      # Docker Hub image
-       image: redis
-
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        #
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 6379:6379
