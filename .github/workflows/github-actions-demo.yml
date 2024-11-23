@@ -9,11 +9,3 @@ jobs:
     # Docker Hub image that `container-job` executes in
     container: node:16-bullseye
 
-    # Service containers to run with `container-job`
-    services:
-      # Label used to access the service container
-      redis:
-        # Docker Hub image
-        image: redis
-
-        
