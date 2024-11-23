@@ -8,4 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container: node:16-bullseye
-
+  steps:
+    - name: Check for dockerenv file
+      run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+    # Service containers to run with `container-job`
+  services:
+    # Label used to access the service container
+    redis:
+      # Docker Hub image
+      image: redis
