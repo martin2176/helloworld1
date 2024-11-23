@@ -1,20 +1,19 @@
 name: "My workflow"
 on:
   workflow_dispatch:
-env:
-  DAY_OF_WEEK: Monday
-
 jobs:
-  greeting_job:
+  # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    environment: test
+    # Docker Hub image that `container-job` executes in
+    container: node:16-bullseye
 
-    steps:
-      - name: step1
-        run: |
-         echo ${{ vars.FOO1 }}
-         echo $foo1
-         echo ${{ vars.FOO }} 
-        env:
-         foo1: ${{ vars.FOO1 }}
+    # Service containers to run with `container-job`
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+
         
