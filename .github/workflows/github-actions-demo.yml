@@ -16,3 +16,9 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+    services:
+    # Label used to access the service container
+     redis:
+      # Docker Hub image
+       image: redis
+
