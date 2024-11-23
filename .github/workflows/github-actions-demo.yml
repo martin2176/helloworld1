@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: curlstep
-       run: curl http://localhost:6379
+       run: curl http://localhost:8080
     # Service containers to run with `runner-job`
     services:
       # Label used to access the service container
       redis:
         # Docker Hub image
-        image: redis
+        image: nginx
         #
         ports:
           # Opens tcp port 6379 on the host and service container
-          - 6379:6379
+          - 8080:80
