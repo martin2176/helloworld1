@@ -1,9 +1,7 @@
 name: Call a reusable workflow
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   call-workflow-passing-data:
@@ -12,6 +10,7 @@ jobs:
       pull-requests: write
     uses: ./.github/workflows/workflow-B.yml
     with:
-      config-path: .github/labeler.yml
+      input1: test1
+      input2: test2
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
