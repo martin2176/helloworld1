@@ -1,20 +1,22 @@
-name: Reusable workflow example
-
+name: calledworkflow
 on:
   workflow_call:
     inputs:
-      config-path:
+      input1:
         required: true
         type: string
+      input2:
+        required: true
+        type: string    
     secrets:
       token:
         required: true
 
 jobs:
-  triage:
+  printinputfromcallingworkflow:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: ${{ secrets.token }}
-        configuration-path: ${{ inputs.config-path }}
+    - run: |
+       echo {{ inputs.input1 }}
+       echo {{ inputs.input2 }}
+       echo {{ secrets.token }}
