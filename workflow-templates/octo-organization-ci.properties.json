@@ -3,6 +3,6 @@
     "description": "MartinFK Organization CI workflow template.",
     "iconName": "example-icon",
     "categories": [
-        "testing"
+        "testing","deployment"
     ]
 }
