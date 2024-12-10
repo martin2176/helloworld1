@@ -7,7 +7,7 @@ jobs:
   job1:
    name: job1name
    #uses: ./.github/workflows/workflow-B.yml
-   uses: martin2176/apiops/.github/workflows/workflow-B.yml
+   uses: martin2176/apiops/.github/workflows/workflow-B.yml@main
   job2:
     name: job2name
     runs-on: ubuntu-latest
