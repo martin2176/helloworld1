@@ -6,8 +6,8 @@ on:
 jobs:
   job1:
    name: job1name
-   uses: ./.github/workflows/workflow-B.yml
-
+   #uses: ./.github/workflows/workflow-B.yml
+   uses: martin2176/apiops/.github/workflows/workflow-B.yml
   job2:
     name: job2name
     runs-on: ubuntu-latest
