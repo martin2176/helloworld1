@@ -12,13 +12,13 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Set Greeting
+    - name: STEPA
       run: echo "Hello $INPUT_WHO_TO_GREET."
       shell: bash
       env:
         INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
 
-    - name: Random Number Generator
+    - name: STEPB
       id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
