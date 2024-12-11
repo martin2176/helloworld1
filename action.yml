@@ -31,5 +31,6 @@ runs:
        echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
        echo 'github_path content is'
        cat $GITHUB_PATH
+      shell: bash
 
 
