@@ -39,6 +39,8 @@ runs:
        echo 'githubpath is' $GITHUB_PATH
        echo 'githubpath content is'
        cat $GITHUB_PATH
+       ls -al ${{ github.action_path }}
+       chmod 755 ${{ github.action_path }}/goodbye.sh
        goodbye.sh
        ${{ github.action_path }}/goodbye.sh      
 
