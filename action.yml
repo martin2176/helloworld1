@@ -32,5 +32,14 @@ runs:
        echo 'github_path content is'
        cat $GITHUB_PATH
       shell: bash
+    - name: STEPD
+      shell: bash
+      run: |
+       echo 'path is' $PATH
+       echo 'githubpath is' $GITHUB_PATH
+       echo 'githubpath content is'
+       cat $GITHUB_PATH
+       goodbye.sh
+       ${{ github.action_path }}/goodbye.sh      
 
 
