@@ -31,18 +31,5 @@ runs:
        echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
        echo 'github_path content is'
        cat $GITHUB_PATH
-       
-      shell: bash
-      env:
-        GITHUB_ACTION_PATH: ${{ github.action_path }}
-    - name: STEPD
-      run: |
-      echo 'path is' $PATH
-      echo 'githubpath is' $GITHUB_PATH
-      echo 'githubpath content is'
-      cat $GITHUB_PATH
-      goodbye.sh
-      ${{ github.action_path }}/goodbye.sh
-      
-      shell: bash
+
 
