@@ -25,14 +25,13 @@ runs:
 
     - name: STEPC
       run: |
-       echo 'githubactionpath is $GITHUB_ACTION_PATH'
+       echo 'githubactionpath is' $GITHUB_ACTION_PATH
        echo 'githubactionpath is ${{ github.action_path }}'
-       echo 'githubpath is $GITHUB_PATH'
-       echo 'github_path content is'
-       cat $GITHUB_PATH
+       echo 'githubpath is' $GITHUB_PATH
        echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
        echo 'github_path content is'
        cat $GITHUB_PATH
+       
       shell: bash
       env:
         GITHUB_ACTION_PATH: ${{ github.action_path }}
